@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. 歴史 &mdash; 代表的な Linux ディストリビューション</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=922be43f" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=19757887"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=4755f45a"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="4. 主要ディストリビューション" href="distros/index.html" />
+    <link rel="prev" title="2. Linux ディストリビューションの基礎" href="basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            代表的な Linux ディストリビューション
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">2. Linux ディストリビューションの基礎</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. 歴史</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux-1991">3.1. Linux カーネルの誕生（1991）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.2. 黎明期（1992〜1993）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.3. 商用化と二大パッケージ形式（1994〜1999）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">3.4. 多様化（2000〜2009）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">3.5. クラウドとコンテナ（2010〜2019）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">3.6. 近年の動向（2020〜）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">3.7. 系譜</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="distros/index.html">4. 主要ディストリビューション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">5. 比較</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selection.html">6. 用途別の選定指針</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">付録</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">用語集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">参考文献</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">代表的な Linux ディストリビューション</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>歴史</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">3. </span>歴史<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>本章では、Linux カーネルの誕生から現在までのディストリビューションの歴史を概観する。主要ディストリビューションの存続期間を<a class="reference internal" href="#fig-lifespans"><span class="std std-numref">図 3.1</span></a> に、系譜を<a class="reference internal" href="#fig-genealogy"><span class="std std-numref">図 3.2</span></a> に示す。</p>
+<figure class="align-default" id="id8">
+<span id="fig-lifespans"></span><a class="reference internal image-reference" href="_images/lifespans.png"><img alt="主要ディストリビューションの存続期間を系統別に示した横棒グラフ" src="_images/lifespans.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">図 3.1 </span><span class="caption-text">主要ディストリビューションの存続期間（2026 年 10 月時点）</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="linux-1991">
+<h2><span class="section-number">3.1. </span>Linux カーネルの誕生（1991）<a class="headerlink" href="#linux-1991" title="Link to this heading"></a></h2>
+<p>1991 年 8 月、ヘルシンキ大学の学生であった Linus Torvalds は、趣味で開発している OS カーネルについてニュースグループ comp.os.minix に投稿した。同年 9 月にバージョン 0.01 が公開され、翌 1992 年にはライセンスが GNU GPL に変更された。これにより、1980 年代から GNU プロジェクトが開発してきたコンパイラやシェルなどのツール群と組み合わせ、自由に再配布できる OS を構成できるようになった。</p>
+<p>当時は、利用者自身がカーネルとツール群を集めてビルドする必要があった。これらをまとめて手軽に導入できるようにしたものが、初期のディストリビューションである。</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">3.2. </span>黎明期（1992〜1993）<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>1992 年には MCC Interim Linux や SLS（Softlanding Linux System）などの初期のディストリビューションが登場した。SLS は広く使われたが不具合が多く、これに不満を持った開発者たちが新しいディストリビューションを作り始めた。</p>
+<p>1993 年 7 月、Patrick Volkerding は SLS を基に Slackware を公開した。Slackware は現在も開発が続く最古のディストリビューションである。</p>
+<p>同年 8 月には Ian Murdock が Debian を発表した。Debian は特定の企業ではなくコミュニティによって開発されることを掲げ、1997 年にはプロジェクトの理念を示す Debian 社会契約と、収録するソフトウェアの基準となる Debian フリーソフトウェアガイドライン（DFSG）を定めた。</p>
+</section>
+<section id="id3">
+<h2><span class="section-number">3.3. </span>商用化と二大パッケージ形式（1994〜1999）<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>1992 年、ドイツのニュルンベルクで S.u.S.E. 社が設立された。同社は当初 Slackware のドイツ語版を販売していたが、1994 年に S.u.S.E. Linux 1.0 を公開し、1996 年には独自に開発したディストリビューションへ移行した。</p>
+<p>1994 年、Marc Ewing は Red Hat Linux の最初のベータ版を公開した。翌 1995 年に Bob Young の会社と合流し、Red Hat 社となった。Red Hat はパッケージ管理のために RPM を開発し、RPM はのちに SUSE などほかのディストリビューションにも採用された。Debian も同時期に dpkg と deb 形式を整備し、1998 年には依存関係を自動で解決する APT を開発した。この時期に確立した deb と RPM は、現在も二大パッケージ形式となっている。</p>
+<p>1990 年代後半には Linux の企業利用が広がり、1999 年に Red Hat は米国で株式を公開した。</p>
+</section>
+<section id="id4">
+<h2><span class="section-number">3.4. </span>多様化（2000〜2009）<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>2000 年代には、目的や思想の異なるディストリビューションが数多く登場した。</p>
+<ul class="simple">
+<li><p>2000 年、SUSE は企業向けの SUSE Linux Enterprise Server（SLES）を IBM のメインフレーム向けに提供した。</p></li>
+<li><p>2002 年、Red Hat は企業向けの Red Hat Linux Advanced Server 2.1 を公開した。これがのちの Red Hat Enterprise Linux（RHEL）である。同年、ソースコードからのビルドを基本とする Gentoo 1.0 と、簡潔さを重視する Arch Linux 0.1 も公開された。</p></li>
+<li><p>2003 年、Red Hat は無償で配布していた Red Hat Linux を終了し、商用の RHEL とコミュニティ主体の Fedora に分けた。Fedora の最初の版である Fedora Core 1 は同年 11 月に公開された。また同年、Novell が SUSE の買収を発表した（2004 年 1 月に完了）。</p></li>
+<li><p>2004 年、RHEL のソースコードからビルドした無償の CentOS が登場した。同年 10 月には、Mark Shuttleworth が設立した Canonical が Debian を基にした Ubuntu 4.10 を公開した。Ubuntu は 6 か月ごとの定期リリースと使いやすさを掲げ、デスクトップとサーバの双方で急速に普及した。</p></li>
+<li><p>2005 年、SUSE のコミュニティ版を開発する openSUSE プロジェクトが発足した。同年、Alpine Linux の開発も始まった。</p></li>
+<li><p>2006 年、Ubuntu を基にした Linux Mint と、RHEL 互換の Oracle Linux（当時の名称は Oracle Enterprise Linux）が登場した。</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2><span class="section-number">3.5. </span>クラウドとコンテナ（2010〜2019）<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>2010 年代には、サーバの主な稼働環境が物理サーバから仮想マシン、クラウド、コンテナへと移っていった。</p>
+<ul class="simple">
+<li><p>2010 年に開発が始まった init システムの systemd は、Fedora、RHEL 7（2014 年）、Debian 8（2015 年）、Ubuntu 15.04（2015 年）などで順次標準となった。Debian では採用を巡って大きな議論があった。</p></li>
+<li><p>2010 年、AWS は自社のクラウド向けに Amazon Linux を公開した。主要なクラウドでは、Ubuntu や RHEL などの公式イメージも提供されるようになった。</p></li>
+<li><p>2013 年に Docker が登場すると、コンテナのベースイメージとして軽量な Alpine Linux が広く使われるようになった。また、コンテナの実行に特化した CoreOS（のちの Container Linux）も登場した。</p></li>
+<li><p>2014 年、CentOS プロジェクトは Red Hat と協力関係を結び、Red Hat が主要な開発者を雇用する体制になった。</p></li>
+<li><p>2019 年、IBM が Red Hat を買収した。同年、RHEL の開発に先行して更新される CentOS Stream が公開された。</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2><span class="section-number">3.6. </span>近年の動向（2020〜）<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>2020 年 12 月、Red Hat は CentOS の重点を CentOS Stream に移すと発表し、CentOS Linux 8 のサポート終了を当初予定の 2029 年から 2021 年末に早めた。CentOS Linux は RHEL の無償の代替として広く使われていたため、多くの利用者が移行先の検討を迫られた。CentOS Linux 7 のサポートも 2024 年 6 月に終了し、CentOS Linux の提供は終了した。</p></li>
+<li><p>これを受けて、RHEL 互換のディストリビューションが新たに立ち上がった。CloudLinux 社が主導した AlmaLinux（2021 年 3 月に最初の正式版）と、CentOS の共同創設者である Gregory Kurtzer が始めた Rocky Linux（2021 年 6 月に最初の正式版）である。</p></li>
+<li><p>2023 年 6 月、Red Hat は RHEL 関連のソースコードの公開先を CentOS Stream に限定すると発表した。RHEL のソースコードを基にしていたリビルドディストリビューションは対応を迫られ、AlmaLinux は RHEL との完全な一致（バグ互換）を目標とする方針から、ABI 互換を目標とする方針に転換した。同年 8 月には、CIQ、Oracle、SUSE が RHEL 互換ディストリビューションのソースコードを共同で提供する団体 OpenELA を設立した。</p></li>
+<li><p>2025 年に RHEL 10、Debian 13、SLES 16 が、2026 年に Ubuntu 26.04 LTS が公開された。</p></li>
+<li><p>OS のシステム領域を読み取り専用とし、OS イメージ全体を単位として更新する<a class="reference internal" href="glossary.html#term-OS"><span class="xref std std-term">イミュータブル OS</span></a> も広がっている。Fedora CoreOS、Fedora Atomic Desktops、openSUSE の MicroOS などがあり、RHEL でも OS をコンテナイメージとして管理するイメージモードが提供されている。</p></li>
+</ul>
+</section>
+<section id="id7">
+<h2><span class="section-number">3.7. </span>系譜<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>主要ディストリビューションの派生関係を<a class="reference internal" href="#fig-genealogy"><span class="std std-numref">図 3.2</span></a> に示す。実線は派生（基盤としての採用）を、破線は開発の流れを表す。</p>
+<figure class="align-default" id="id9">
+<span id="fig-genealogy"></span><div class="graphviz"><object data="_images/graphviz-02ae36c22550f921a44b853d9b9d2ccaf1fbd4b5.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">主要ディストリビューションの派生関係を示す系譜図</p></object></div>
+<figcaption>
+<p><span class="caption-number">図 3.2 </span><span class="caption-text">主要ディストリビューションの系譜</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>SUSE Linux は Slackware のドイツ語版から始まったが、1996 年以降は独自に開発されており、現在の SUSE 系は Slackware とは別系統である。CentOS Linux は RHEL のソースコードからビルドされていた。Rocky Linux と Oracle Linux は RHEL との互換性を目標としており、AlmaLinux は 2023 年以降、CentOS Stream のソースコードを基に RHEL との ABI 互換を目標としている。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basics.html" class="btn btn-neutral float-left" title="2. Linux ディストリビューションの基礎" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="distros/index.html" class="btn btn-neutral float-right" title="4. 主要ディストリビューション" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Nunu_3060.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
