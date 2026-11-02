@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. 引用・コードブロック・区切り線 &mdash; Markdown 入門 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3becb0e1" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=19757887"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=4755f45a"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="8. リンクと画像" href="ch08_link_image.html" />
+    <link rel="prev" title="6. リスト" href="ch06_list.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Markdown 入門
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">本編</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ch01_what_is_markdown.html">1. Markdown とは</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id1">1.1. 軽量マークアップ言語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id2">1.2. Markdown の成り立ち</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id3">1.3. 方言と標準化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id4">1.4. 本書での記法の分け方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id5">1.5. 他の軽量マークアップ言語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id6">1.6. Markdown が使われる場所</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id7">1.7. 本書の読み方</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch02_environment.html">2. 書く環境を用意する</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch02_environment.html#id2">2.1. ファイルの拡張子と文字コード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch02_environment.html#markdown-html">2.2. Markdown が HTML に変換される流れ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch02_environment.html#vs-code">2.3. VS Code でプレビューする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch02_environment.html#github">2.4. GitHub で表示を確かめる</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch03_first_document.html">3. はじめての Markdown 文書</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id1">3.1. ファイルを作る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id2">3.2. 見出しと段落を書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id3">3.3. 項目を並べる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id4">3.4. 文字を強調する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id5">3.5. リンクを張る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id6">3.6. できあがった文書</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch04_paragraph_heading.html">4. 段落・改行・見出し</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id2">4.1. 段落</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id3">4.2. 改行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ch04_paragraph_heading.html#github">4.2.1. GitHub のコメント欄での改行</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id4">4.3. 見出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id5">4.4. 見出しの書き方の指針</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id6">4.5. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id7">4.6. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch05_emphasis.html">5. 文字の装飾</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id2">5.1. 強調と強い強調</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id3">5.2. 取り消し線</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id4">5.3. インラインコード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id5">5.4. エスケープ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id6">5.5. コラム：日本語の文中で強調が効かない</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id7">5.6. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id8">5.7. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch06_list.html">6. リスト</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id2">6.1. 箇条書き</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id3">6.2. 番号付きリスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id4">6.3. リストの入れ子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id5">6.4. リスト項目の中に段落やコードブロックを入れる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id6">6.5. 段落の直後にリストを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id7">6.6. タスクリスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id8">6.7. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id9">6.8. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. 引用・コードブロック・区切り線</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">7.1. 引用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">7.2. コードブロック</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">7.2.1. フェンスで囲むコードブロック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">7.2.2. インデントによるコードブロック</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">7.3. 区切り線</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">7.4. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">7.5. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch08_link_image.html">8. リンクと画像</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id2">8.1. インラインリンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id3">8.2. 参照リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id4">8.3. 自動リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id5">8.4. リポジトリ内のファイルへのリンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id6">8.5. 見出しへのリンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id7">8.6. 画像</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id8">8.7. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id9">8.8. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch09_table.html">9. 表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id2">9.1. 表の書き方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id3">9.2. 列の配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id4">9.3. セルの中に書けるもの</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id5">9.4. 表の制限</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id6">9.5. 表の整形はツールに任せる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id7">9.6. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id8">9.7. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch10_html_github.html">10. HTML の埋め込みと GitHub の独自機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch10_html_github.html#html">10.1. HTML を直接書く</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id1">10.1.1. 改行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id2">10.1.2. 画像の大きさ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id3">10.1.3. 折りたたみ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id4">10.1.4. コメント</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id5">10.1.5. HTML が取り除かれる場所</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ch10_html_github.html#github">10.2. GitHub の独自機能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id6">10.2.1. 脚注</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id7">10.2.2. 数式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id8">10.2.3. アラート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#mermaid">10.2.4. Mermaid による図</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch10_html_github.html#id9">10.2.5. 絵文字</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ch10_html_github.html#id10">10.3. サービスごとの対応状況</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch10_html_github.html#id11">10.4. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch10_html_github.html#id12">10.5. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch11_readme.html">11. 実践：README を書く</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#id1">11.1. README とは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#id2">11.2. README に書く項目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#id3">11.3. 悪い例を書き直す</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#issue">11.4. Issue とプルリクエスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#id4">11.5. コミットメッセージ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch12_differences_style.html">12. 表示する場所による違いと書き方の指針</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#id2">12.1. 同じソースでも表示が異なる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#id3">12.2. 行末の空白が消える問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#id4">12.3. 書き方をそろえる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#markdownlint">12.4. markdownlint で検査する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#prettier">12.5. Prettier で整形する</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch13_other_uses.html">13. Markdown のその他の活用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#pandoc">13.1. Pandoc で他の形式に変換する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#web">13.2. Web サイトを作る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#id1">13.3. フロントマター</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#jupyter-notebook">13.4. ノートアプリと Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#id2">13.5. チャットツールの記法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#id3">13.6. プログラムから変換する</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">付録</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_cheatsheet.html">付録 A 早見表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix_a_cheatsheet.html#markdown">Markdown の早見表</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_glossary.html">付録 B 用語集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_references.html">付録 C 参考文献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix_c_references.html#markdown">Markdown の仕様</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix_c_references.html#github">GitHub のドキュメント</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix_c_references.html#id6">ツール</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Markdown 入門</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7. </span>引用・コードブロック・区切り線</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">7. </span>引用・コードブロック・区切り線<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>この章では、他の文章を引用する書き方、複数行のコードを示すコードブロック、区切り線を説明する。いずれも段落とは別の<a class="reference internal" href="appendix_b_glossary.html#term-16"><span class="xref std std-term">ブロック要素</span></a>として表示される。</p>
+<section id="id2">
+<h2><span class="section-number">7.1. </span>引用<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>行頭に <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> と半角空白を書くと、その行は引用になる。HTML では <code class="docutils literal notranslate"><span class="pre">&lt;blockquote&gt;</span></code> に変換される。電子メールの返信で、元の文章の行頭に <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> を付けて引用する習慣から取られた記法である。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>公式ドキュメントには次のように書かれている。
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">&gt; </span><span class="ge">仮想環境を作成した後は、</span>
+<span class="linenos">4</span><span class="k">&gt; </span><span class="ge">必要なパッケージをインストールすること。</span>
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<p>公式ドキュメントには次のように書かれている。</p>
+<blockquote>
+<p>仮想環境を作成した後は、
+必要なパッケージをインストールすること。</p>
+</blockquote>
+</div>
+</div>
+<p>引用の中は、段落と同じく 1 回の改行では改行されない。引用の中で段落を分けたいときは、<code class="docutils literal notranslate"><span class="pre">&gt;</span></code> だけの行を空行の代わりに入れる。引用の中では、見出しやリストなど他の記法も使える。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">&gt; </span><span class="ge">## 注意事項</span>
+<span class="linenos">2</span><span class="k">&gt;</span>
+<span class="linenos">3</span><span class="ge">&gt; 次の 2 点を守ること。</span>
+<span class="linenos">4</span><span class="k">&gt;</span>
+<span class="linenos">5</span><span class="ge">&gt; - 作業前に最新のコードを取得する</span>
+<span class="linenos">6</span><span class="k">&gt; </span><span class="ge">- 作業後にテストを実行する</span>
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<blockquote>
+<h2>注意事項</h2>
+<p>次の 2 点を守ること。</p>
+<ul>
+<li>作業前に最新のコードを取得する</li>
+<li>作業後にテストを実行する</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> を重ねると、引用を入れ子にできる。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">&gt; </span><span class="ge">明日の会議は 10 時からでよいか。</span>
+<span class="linenos">2</span><span class="k">&gt;</span>
+<span class="linenos">3</span><span class="ge">&gt; &gt; 10 時からで問題ない。</span>
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<blockquote>
+<p>明日の会議は 10 時からでよいか。</p>
+<blockquote>
+<p>10 時からで問題ない。</p>
+</blockquote>
+</blockquote>
+</div>
+</div>
+<p>CommonMark では、引用の中の段落が続いている間は、2 行目以降の <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> を省略しても引用の続きとして扱われる。しかし、ソースが読みにくくなり、意図せず引用が続いてしまう原因にもなるので、引用するすべての行に <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> を付ける。また、引用の後に普通の段落を続けるときは、間に空行を入れる。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">&gt; </span><span class="ge">引用した文章。</span>
+<span class="linenos">2</span>ここも引用の続きになる。
+<span class="linenos">3</span>
+<span class="linenos">4</span>ここは引用の外になる。
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<blockquote>
+<p>引用した文章。
+ここも引用の続きになる。</p>
+</blockquote>
+<p>ここは引用の外になる。</p>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">7.2. </span>コードブロック<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>複数行のコードやコマンドの実行結果を示すときは、<a class="reference internal" href="appendix_b_glossary.html#term-7"><span class="xref std std-term">コードブロック</span></a>を使う。コードブロックの中は、インラインコードと同じく Markdown の記法が解釈されず、等幅のフォントで書いたとおりに表示される。HTML では <code class="docutils literal notranslate"><span class="pre">&lt;pre&gt;</span></code> と <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> に変換される。</p>
+<section id="id4">
+<h3><span class="section-number">7.2.1. </span>フェンスで囲むコードブロック<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>バッククォートを 3 個並べた行で、コードの前後を囲む。この囲みの行を<a class="reference internal" href="appendix_b_glossary.html#term-14"><span class="xref std std-term">フェンス</span></a>と呼ぶ。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sb">```</span>
+<span class="linenos"> 2</span><span class="sb">def greet(name):</span>
+<span class="linenos"> 3</span><span class="sb">    print(f&quot;Hello, {name}!&quot;)</span>
+<span class="linenos"> 4</span><span class="sb">```</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>Markdown の記号もそのまま表示される。
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="sb">```</span>
+<span class="linenos"> 9</span><span class="sb"># 見出しにならない</span>
+<span class="linenos">10</span><span class="sb">- 箇条書きにならない</span>
+<span class="linenos">11</span><span class="sb">```</span>
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<pre><code>def greet(name):
+    print(f&quot;Hello, {name}!&quot;)
+</code></pre>
+<p>Markdown の記号もそのまま表示される。</p>
+<pre><code># 見出しにならない
+- 箇条書きにならない
+</code></pre>
+</div>
+</div>
+<p>バッククォートの代わりにチルダ（<code class="docutils literal notranslate"><span class="pre">~</span></code>）を 3 個並べてもよい。開始と終了のフェンスには同じ種類の記号を使い、終了のフェンスは開始のフェンス以上の個数にする。</p>
+<p>開始のフェンスの直後に言語名を書くと、多くの場所でコードが言語の文法に合わせて色分けされる。これを<a class="reference internal" href="appendix_b_glossary.html#term-8"><span class="xref std std-term">シンタックスハイライト</span></a>と呼ぶ。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="sb">```python</span>
+<span class="linenos">2</span><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="sb">```</span>
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<pre><code class="language-python">def greet(name):
+    print(f&quot;Hello, {name}!&quot;)
+</code></pre>
+</div>
+</div>
+<p>言語名には、<code class="docutils literal notranslate"><span class="pre">python</span></code>、<code class="docutils literal notranslate"><span class="pre">javascript</span></code>、<code class="docutils literal notranslate"><span class="pre">bash</span></code>、<code class="docutils literal notranslate"><span class="pre">json</span></code>、<code class="docutils literal notranslate"><span class="pre">html</span></code>、<code class="docutils literal notranslate"><span class="pre">diff</span></code> などを書く。使える言語名は表示する場所（GitHub など）によって決まる。色分けが不要な文章やエラーメッセージには <code class="docutils literal notranslate"><span class="pre">text</span></code> と書くと、意図が明確になる。本書の表示結果には色分けの機能がないため、言語名を書いても色は付かないが、GitHub や VS Code のプレビューでは色が付く。</p>
+<p>コードブロックの中に <code class="docutils literal notranslate"><span class="pre">```</span></code> を含む文章（Markdown のソースなど）を示したいときは、外側のフェンスのバッククォートを 4 個以上にする。中の <code class="docutils literal notranslate"><span class="pre">```</span></code> は、外側より短いのでフェンスとはみなされない。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>````markdown
+<span class="linenos">2</span>コードブロックは次のように書く。
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="sb">```python</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="linenos">6</span><span class="sb">```</span>
+<span class="linenos">7</span>````
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<pre><code class="language-markdown">コードブロックは次のように書く。
+
+```python
+print(&quot;Hello&quot;)
+```
+</code></pre>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3><span class="section-number">7.2.2. </span>インデントによるコードブロック<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>空行の後で、行頭に半角空白を 4 個以上入れた行も、コードブロックになる。段落の直後の行の場合は、コードブロックにならずに段落の続きとして扱われる。これは元の Markdown からある書き方である。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>次のコマンドを実行する。
+<span class="linenos">2</span>
+<span class="linenos">3</span>    python main.py
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<p>次のコマンドを実行する。</p>
+<pre><code>python main.py
+</code></pre>
+</div>
+</div>
+<p>インデントによるコードブロックは、言語名を指定できないうえに、リストの中で使うと字下げの量が分かりにくくなる。たとえば、リストの項目の中にコードブロックを入れるには、項目の本文の開始位置から、さらに 4 文字字下げする必要がある。逆に、リストの続きのつもりで深く字下げした文章が、意図せずコードブロックになることもある。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">-</span><span class="w"> </span>項目の本文
+<span class="linenos">2</span>
+<span class="linenos">3</span>      項目の本文から 4 文字字下げしたので、コードブロックになる
+<span class="linenos">4</span>
+<span class="linenos">5</span>普通の段落のつもりで 4 文字字下げした行もコードブロックになる。
+<span class="linenos">6</span>
+<span class="linenos">7</span>    字下げした行
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<ul>
+<li>
+<p>項目の本文</p>
+<pre><code>項目の本文から 4 文字字下げしたので、コードブロックになる
+</code></pre>
+</li>
+</ul>
+<p>普通の段落のつもりで 4 文字字下げした行もコードブロックになる。</p>
+<pre><code>字下げした行
+</code></pre>
+</div>
+</div>
+<p>コードブロックには、フェンスで囲む書き方を使うほうがよい。また、空行の後の文章の行頭に、不用意に 4 個以上の空白を入れないように注意する。</p>
+</section>
+</section>
+<section id="id6">
+<h2><span class="section-number">7.3. </span>区切り線<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-</span></code>、<code class="docutils literal notranslate"><span class="pre">*</span></code>、<code class="docutils literal notranslate"><span class="pre">_</span></code> のいずれかを 3 個以上並べた行は、区切り線（水平線）になる。HTML では <code class="docutils literal notranslate"><span class="pre">&lt;hr&gt;</span></code> に変換される。記号の間に空白を入れてもよい。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>前半の話題。
+<span class="linenos">2</span>
+<span class="linenos">3</span>---
+<span class="linenos">4</span>
+<span class="linenos">5</span>後半の話題。
+<span class="linenos">6</span>
+<span class="linenos">7</span>***
+<span class="linenos">8</span>
+<span class="linenos">9</span><span class="k">*</span><span class="w"> </span>* *
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<p>前半の話題。</p>
+<hr />
+<p>後半の話題。</p>
+<hr />
+<hr />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-</span></code> を並べる書き方には注意が必要である。段落の直後の行に <code class="docutils literal notranslate"><span class="pre">---</span></code> を書くと、区切り線ではなく、その段落を見出しにする Setext 形式の見出し（第 4 章）として扱われる。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gu">区切り線のつもり</span>
+<span class="linenos">2</span><span class="gu">---</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span>区切り線になる
+<span class="linenos">5</span>
+<span class="linenos">6</span>---
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<h2>区切り線のつもり</h2>
+<p>区切り線になる</p>
+<hr />
+</div>
+</div>
+<p>区切り線の前後には必ず空行を入れる。<code class="docutils literal notranslate"><span class="pre">---</span></code> で迷う場合は、Setext 形式と紛らわしくない <code class="docutils literal notranslate"><span class="pre">***</span></code> を使ってもよい。</p>
+</section>
+<section id="id7">
+<h2><span class="section-number">7.4. </span>よくある間違い<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-number">表 7.1 </span><span class="caption-text">引用・コードブロック・区切り線のよくある間違い</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>間違い</p></th>
+<th class="head"><p>結果</p></th>
+<th class="head"><p>正しい書き方</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>引用の直後に空行なしで普通の文章を書く</p></td>
+<td><p>文章が引用の続きになる</p></td>
+<td><p>引用の後に空行を入れる</p></td>
+</tr>
+<tr class="row-odd"><td><p>終了のフェンスを書き忘れる</p></td>
+<td><p>文書の最後までコードブロックになる</p></td>
+<td><p>開始と終了のフェンスを対にして書く</p></td>
+</tr>
+<tr class="row-even"><td><p>空行の後の文章の行頭に 4 個以上の空白を入れる</p></td>
+<td><p>コードブロックになる</p></td>
+<td><p>行頭の空白を取り除く</p></td>
+</tr>
+<tr class="row-odd"><td><p>段落の直後に <code class="docutils literal notranslate"><span class="pre">---</span></code> を書く</p></td>
+<td><p>段落が見出しになる</p></td>
+<td><p>間に空行を入れるか <code class="docutils literal notranslate"><span class="pre">***</span></code> を使う</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h2><span class="section-number">7.5. </span>この章のサンプル<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>この章の記法を使った、不具合を報告する文書の例を示す。このファイルは <a class="reference download internal" download="" href="_downloads/15b9318ed90190f1bf17aeed3f6c4c7d/ch07_quote_code.md"><code class="xref download docutils literal notranslate"><span class="pre">ch07_quote_code.md</span></code></a> からダウンロードできる。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="gh"># エラーの報告</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="gu">## 発生した現象</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>テストを実行すると、次のエラーが表示される。
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="sb">```text</span>
+<span class="linenos"> 8</span>ModuleNotFoundError: No module named &#39;requests&#39;
+<span class="linenos"> 9</span><span class="sb">```</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="gu">## 再現する手順</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="sb">```bash</span>
+<span class="linenos">14</span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="linenos">15</span>python<span class="w"> </span>main.py
+<span class="linenos">16</span><span class="sb">```</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="gu">## 期待する結果</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>エラーが表示されずに、プログラムが起動する。
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="gu">## 実行環境</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="k">-</span><span class="w"> </span>Windows 11
+<span class="linenos">25</span><span class="k">-</span><span class="w"> </span>Python 3.12
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="gu">## 参考</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>公式ドキュメントには次のように書かれている。
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="k">&gt; </span><span class="ge">仮想環境を作成した後は、必要なパッケージをインストールすること。</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span>---
+<span class="linenos">34</span>
+<span class="linenos">35</span>報告者：山田
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<h1>エラーの報告</h1>
+<h2>発生した現象</h2>
+<p>テストを実行すると、次のエラーが表示される。</p>
+<pre><code class="language-text">ModuleNotFoundError: No module named 'requests'
+</code></pre>
+<h2>再現する手順</h2>
+<pre><code class="language-bash">python -m venv .venv
+python main.py
+</code></pre>
+<h2>期待する結果</h2>
+<p>エラーが表示されずに、プログラムが起動する。</p>
+<h2>実行環境</h2>
+<ul>
+<li>Windows 11</li>
+<li>Python 3.12</li>
+</ul>
+<h2>参考</h2>
+<p>公式ドキュメントには次のように書かれている。</p>
+<blockquote>
+<p>仮想環境を作成した後は、必要なパッケージをインストールすること。</p>
+</blockquote>
+<hr />
+<p>報告者：山田</p>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ch06_list.html" class="btn btn-neutral float-left" title="6. リスト" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ch08_link_image.html" class="btn btn-neutral float-right" title="8. リンクと画像" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Nunu_3060.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10. HTML の埋め込みと GitHub の独自機能 &mdash; Markdown 入門 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3becb0e1" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=19757887"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=4755f45a"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="11. 実践：README を書く" href="ch11_readme.html" />
+    <link rel="prev" title="9. 表" href="ch09_table.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Markdown 入門
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">本編</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ch01_what_is_markdown.html">1. Markdown とは</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id1">1.1. 軽量マークアップ言語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id2">1.2. Markdown の成り立ち</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id3">1.3. 方言と標準化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id4">1.4. 本書での記法の分け方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id5">1.5. 他の軽量マークアップ言語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id6">1.6. Markdown が使われる場所</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch01_what_is_markdown.html#id7">1.7. 本書の読み方</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch02_environment.html">2. 書く環境を用意する</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch02_environment.html#id2">2.1. ファイルの拡張子と文字コード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch02_environment.html#markdown-html">2.2. Markdown が HTML に変換される流れ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch02_environment.html#vs-code">2.3. VS Code でプレビューする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch02_environment.html#github">2.4. GitHub で表示を確かめる</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch03_first_document.html">3. はじめての Markdown 文書</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id1">3.1. ファイルを作る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id2">3.2. 見出しと段落を書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id3">3.3. 項目を並べる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id4">3.4. 文字を強調する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id5">3.5. リンクを張る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch03_first_document.html#id6">3.6. できあがった文書</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch04_paragraph_heading.html">4. 段落・改行・見出し</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id2">4.1. 段落</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id3">4.2. 改行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ch04_paragraph_heading.html#github">4.2.1. GitHub のコメント欄での改行</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id4">4.3. 見出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id5">4.4. 見出しの書き方の指針</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id6">4.5. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch04_paragraph_heading.html#id7">4.6. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch05_emphasis.html">5. 文字の装飾</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id2">5.1. 強調と強い強調</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id3">5.2. 取り消し線</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id4">5.3. インラインコード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id5">5.4. エスケープ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id6">5.5. コラム：日本語の文中で強調が効かない</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id7">5.6. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch05_emphasis.html#id8">5.7. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch06_list.html">6. リスト</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id2">6.1. 箇条書き</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id3">6.2. 番号付きリスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id4">6.3. リストの入れ子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id5">6.4. リスト項目の中に段落やコードブロックを入れる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id6">6.5. 段落の直後にリストを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id7">6.6. タスクリスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id8">6.7. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch06_list.html#id9">6.8. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch07_quote_code.html">7. 引用・コードブロック・区切り線</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch07_quote_code.html#id2">7.1. 引用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch07_quote_code.html#id3">7.2. コードブロック</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ch07_quote_code.html#id4">7.2.1. フェンスで囲むコードブロック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ch07_quote_code.html#id5">7.2.2. インデントによるコードブロック</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ch07_quote_code.html#id6">7.3. 区切り線</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch07_quote_code.html#id7">7.4. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch07_quote_code.html#id8">7.5. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch08_link_image.html">8. リンクと画像</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id2">8.1. インラインリンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id3">8.2. 参照リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id4">8.3. 自動リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id5">8.4. リポジトリ内のファイルへのリンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id6">8.5. 見出しへのリンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id7">8.6. 画像</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id8">8.7. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch08_link_image.html#id9">8.8. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch09_table.html">9. 表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id2">9.1. 表の書き方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id3">9.2. 列の配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id4">9.3. セルの中に書けるもの</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id5">9.4. 表の制限</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id6">9.5. 表の整形はツールに任せる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id7">9.6. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch09_table.html#id8">9.7. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. HTML の埋め込みと GitHub の独自機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#html">10.1. HTML を直接書く</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10.1.1. 改行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">10.1.2. 画像の大きさ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">10.1.3. 折りたたみ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">10.1.4. コメント</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">10.1.5. HTML が取り除かれる場所</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#github">10.2. GitHub の独自機能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">10.2.1. 脚注</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">10.2.2. 数式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">10.2.3. アラート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mermaid">10.2.4. Mermaid による図</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">10.2.5. 絵文字</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">10.3. サービスごとの対応状況</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">10.4. よくある間違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">10.5. この章のサンプル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch11_readme.html">11. 実践：README を書く</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#id1">11.1. README とは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#id2">11.2. README に書く項目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#id3">11.3. 悪い例を書き直す</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#issue">11.4. Issue とプルリクエスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11_readme.html#id4">11.5. コミットメッセージ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch12_differences_style.html">12. 表示する場所による違いと書き方の指針</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#id2">12.1. 同じソースでも表示が異なる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#id3">12.2. 行末の空白が消える問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#id4">12.3. 書き方をそろえる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#markdownlint">12.4. markdownlint で検査する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12_differences_style.html#prettier">12.5. Prettier で整形する</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch13_other_uses.html">13. Markdown のその他の活用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#pandoc">13.1. Pandoc で他の形式に変換する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#web">13.2. Web サイトを作る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#id1">13.3. フロントマター</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#jupyter-notebook">13.4. ノートアプリと Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#id2">13.5. チャットツールの記法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch13_other_uses.html#id3">13.6. プログラムから変換する</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">付録</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_cheatsheet.html">付録 A 早見表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix_a_cheatsheet.html#markdown">Markdown の早見表</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_glossary.html">付録 B 用語集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_references.html">付録 C 参考文献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix_c_references.html#markdown">Markdown の仕様</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix_c_references.html#github">GitHub のドキュメント</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix_c_references.html#id6">ツール</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Markdown 入門</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">10. </span>HTML の埋め込みと GitHub の独自機能</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="html-github">
+<h1><span class="section-number">10. </span>HTML の埋め込みと GitHub の独自機能<a class="headerlink" href="#html-github" title="Link to this heading"></a></h1>
+<p>この章では、Markdown の中に HTML を直接書く方法と、GitHub が独自に対応している機能（脚注、数式、アラート、Mermaid による図、絵文字）を説明する。どちらも、表示する場所によって使えるかどうかが異なる点に注意が必要である。</p>
+<section id="html">
+<h2><span class="section-number">10.1. </span>HTML を直接書く<a class="headerlink" href="#html" title="Link to this heading"></a></h2>
+<p>CommonMark では、Markdown の中に HTML のタグを直接書ける。Markdown の記法では表せない表示をしたいときに使う。</p>
+<section id="id1">
+<h3><span class="section-number">10.1.1. </span>改行<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> を書くと、その位置で改行される。表のセルの中など、強制改行（第 4 章）が使えない場所で役に立つ。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>| 項目 | 内容 |
+<span class="linenos">2</span>| --- | --- |
+<span class="linenos">3</span>| 住所 | 東京都千代田区&lt;br&gt;1-1-1 |
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（GitHub）</p>
+<div class="md-result">
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>住所</td>
+<td>東京都千代田区<br>1-1-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">10.1.2. </span>画像の大きさ<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Markdown の画像の記法では大きさを指定できない。<code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> タグを直接書けば、<code class="docutils literal notranslate"><span class="pre">width</span></code> 属性で幅を指定できる。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>&lt;img src=&quot;images/sample.png&quot; alt=&quot;サンプル画像&quot; width=&quot;120&quot;&gt;
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<img src="images/sample.png" alt="サンプル画像" width="120">
+</div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">10.1.3. </span>折りたたみ<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;details&gt;</span></code> と <code class="docutils literal notranslate"><span class="pre">&lt;summary&gt;</span></code> を使うと、クリックすると開く折りたたみの部分を作れる。長いログや補足の説明を、普段は隠しておきたいときに使う。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>&lt;details&gt;
+<span class="linenos"> 2</span>&lt;summary&gt;エラーの詳細（クリックで開く）&lt;/summary&gt;
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="sb">```text</span>
+<span class="linenos"> 5</span>Traceback (most recent call last):
+<span class="linenos"> 6</span>  File &quot;main.py&quot;, line 1, in &lt;module&gt;
+<span class="linenos"> 7</span>    import requests
+<span class="linenos"> 8</span>ModuleNotFoundError: No module named &#39;requests&#39;
+<span class="linenos"> 9</span><span class="sb">```</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>&lt;/details&gt;
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<details>
+<summary>エラーの詳細（クリックで開く）</summary>
+<pre><code class="language-text">Traceback (most recent call last):
+  File &quot;main.py&quot;, line 1, in &lt;module&gt;
+    import requests
+ModuleNotFoundError: No module named 'requests'
+</code></pre>
+</details>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;summary&gt;</span></code> の行の後と <code class="docutils literal notranslate"><span class="pre">&lt;/details&gt;</span></code> の行の前に空行を入れると、その間に Markdown の記法（この例ではコードブロック）を書ける。空行がないと、間の文章は HTML の一部として扱われ、Markdown の記法が解釈されない。</p>
+</section>
+<section id="id4">
+<h3><span class="section-number">10.1.4. </span>コメント<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;!--</span></code> と <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code> で囲んだ部分は HTML のコメントになり、表示されない。書きかけのメモや、文書を編集する人への注意を残したいときに使う。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>この段落は表示される。
+<span class="linenos">2</span>
+<span class="linenos">3</span>&lt;!-- TODO: 次回の更新で手順を追加する --&gt;
+<span class="linenos">4</span>
+<span class="linenos">5</span>この段落も表示される。
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（CommonMark）</p>
+<div class="md-result">
+<p>この段落は表示される。</p>
+<!-- TODO: 次回の更新で手順を追加する -->
+<p>この段落も表示される。</p>
+</div>
+</div>
+<p>ただし、コメントは表示されないだけで、ソースを開けば誰でも読める。公開したくない情報を書いてはいけない。</p>
+</section>
+<section id="id5">
+<h3><span class="section-number">10.1.5. </span>HTML が取り除かれる場所<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>HTML を書けると、悪意のあるプログラム（<code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> タグなど）を埋め込まれる危険がある。そのため、多くのサービスでは、安全のために一部のタグや属性を取り除いてから表示する。GitHub でも、<code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> や <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code> などのタグや、<code class="docutils literal notranslate"><span class="pre">style</span></code> 属性などは取り除かれる。どのタグを使えるかはサービスによって異なり、HTML をまったく使えない場所もある。</p>
+<p>HTML は Markdown の記法では表せないときに限って使い、使った場合は実際に表示される場所で確かめるようにする。</p>
+</section>
+</section>
+<section id="github">
+<h2><span class="section-number">10.2. </span>GitHub の独自機能<a class="headerlink" href="#github" title="Link to this heading"></a></h2>
+<p>ここからは、GFM の仕様にはないが、GitHub が独自に対応している機能を説明する。他のサービスでも似た機能を持つことが多いが、書き方が異なったり、対応していなかったりする。</p>
+<section id="id6">
+<h3><span class="section-number">10.2.1. </span>脚注<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>文中に <code class="docutils literal notranslate"><span class="pre">[^ラベル]</span></code> と書くと、脚注への参照になる。脚注の内容は、別の行に <code class="docutils literal notranslate"><span class="pre">[^ラベル]:</span></code> と書いて定義する。脚注は文書の末尾にまとめて表示され、参照の位置には番号が表示される。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Markdown は 2004 年に公開された[^1]。CommonMark は Markdown の仕様である[^cm]。
+<span class="linenos">2</span>
+<span class="linenos">3</span>[<span class="nl">^1</span>]: <span class="na">John Gruber による。</span>
+<span class="linenos">4</span>[<span class="nl">^cm</span>]: <span class="na">2014 年に作られた。</span>
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（GitHub）</p>
+<div class="md-result">
+<p>Markdown は 2004 年に公開された<sup class="footnote-ref"><a href="#fn-ex4-1" id="fnref-ex4-1">[1]</a></sup>。CommonMark は Markdown の仕様である<sup class="footnote-ref"><a href="#fn-ex4-2" id="fnref-ex4-2">[2]</a></sup>。</p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn-ex4-1" class="footnote-item"><p>John Gruber による。 <a href="#fnref-ex4-1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn-ex4-2" class="footnote-item"><p>2014 年に作られた。 <a href="#fnref-ex4-2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div>
+</div>
+<p>ラベルには数字だけでなく単語も使える。表示される番号は、ラベルにかかわらず、文中で参照した順に 1 から振られる。脚注の定義は文書のどこに書いてもよい。</p>
+</section>
+<section id="id7">
+<h3><span class="section-number">10.2.2. </span>数式<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">$</span></code> で囲むと文中の数式、<code class="docutils literal notranslate"><span class="pre">$$</span></code> だけの行で囲むと独立した行の数式になる。数式は、数学の論文などで使われる LaTeX という書き方で書く。</p>
+<div class="md-example md-example-math docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>円の面積は $S = \pi r^2$ で求められる。
+<span class="linenos">2</span>
+<span class="linenos">3</span>$$
+<span class="linenos">4</span>x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+<span class="linenos">5</span>$$
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（GitHub）</p>
+<div class="md-result">
+<p>円の面積は <span class="math inline">\(S = \pi r^2\)</span> で求められる。</p>
+<div class="math block">
+\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+</div>
+</div>
+</div>
+<p>LaTeX の書き方は本書の範囲を超えるので説明しない。<code class="docutils literal notranslate"><span class="pre">\pi</span></code> が円周率の記号、<code class="docutils literal notranslate"><span class="pre">\frac{分子}{分母}</span></code> が分数、<code class="docutils literal notranslate"><span class="pre">\sqrt{...}</span></code> が平方根を表す、という程度を知っておけば、簡単な数式は読める。</p>
+<p>文章の中で金額を表す <code class="docutils literal notranslate"><span class="pre">$</span></code> を使うと、数式として解釈されてしまうことがある。その場合は <code class="docutils literal notranslate"><span class="pre">\$</span></code> とエスケープする。</p>
+</section>
+<section id="id8">
+<h3><span class="section-number">10.2.3. </span>アラート<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>引用の 1 行目に <code class="docutils literal notranslate"><span class="pre">[!NOTE]</span></code> などと書くと、色の付いた注意書き（アラート）になる。種類は次の 5 つである。</p>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-number">表 10.1 </span><span class="caption-text">アラートの種類</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>書き方</p></th>
+<th class="head"><p>用途</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[!NOTE]</span></code></p></td>
+<td><p>補足。読み飛ばしてもよいが知っておくと役に立つ情報</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[!TIP]</span></code></p></td>
+<td><p>ヒント。作業をうまく進めるための助言</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[!IMPORTANT]</span></code></p></td>
+<td><p>重要。目的を達成するために必要な情報</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[!WARNING]</span></code></p></td>
+<td><p>警告。問題を避けるために、すぐに注意すべき情報</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[!CAUTION]</span></code></p></td>
+<td><p>注意。行動した結果として起こりうる危険</p></td>
+</tr>
+</tbody>
+</table>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">&gt; </span><span class="ge">[!NOTE]</span>
+<span class="linenos">2</span><span class="k">&gt; </span><span class="ge">設定ファイルは初回の起動時に自動で作られる。</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">&gt; </span><span class="ge">[!WARNING]</span>
+<span class="linenos">5</span><span class="k">&gt; </span><span class="ge">この操作は取り消せない。</span>
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（GitHub）</p>
+<div class="md-result">
+<div class="markdown-alert markdown-alert-note">
+<p class="markdown-alert-title">Note</p>
+<p>設定ファイルは初回の起動時に自動で作られる。</p>
+</div>
+<div class="markdown-alert markdown-alert-warning">
+<p class="markdown-alert-title">Warning</p>
+<p>この操作は取り消せない。</p>
+</div>
+</div>
+</div>
+<p>アラートの見出し（Note、Warning など）は英語で表示される。本書の表示結果は GitHub の色に近づけているが、GitHub では見出しの前にアイコンも表示される。アラートを多用すると、かえって重要な情報が目立たなくなるので、本当に必要な箇所に限って使う。</p>
+</section>
+<section id="mermaid">
+<h3><span class="section-number">10.2.4. </span>Mermaid による図<a class="headerlink" href="#mermaid" title="Link to this heading"></a></h3>
+<p>コードブロックの言語名に <code class="docutils literal notranslate"><span class="pre">mermaid</span></code> と書くと、その中に書いた Mermaid という記法の文章から図が描かれる。Mermaid では、流れ図、シーケンス図、ガントチャートなどを文章で書ける。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="sb">```mermaid</span>
+<span class="linenos">2</span><span class="s">flowchart TD</span>
+<span class="linenos">3</span><span class="s">    A[開始] --&gt; B{入力は正しいか}</span>
+<span class="linenos">4</span><span class="s">    B -- はい --&gt; C[保存する]</span>
+<span class="linenos">5</span><span class="s">    B -- いいえ --&gt; D[エラーを表示する]</span>
+<span class="linenos">6</span><span class="s">    C --&gt; E[終了]</span>
+<span class="linenos">7</span><span class="s">    D --&gt; E</span>
+<span class="linenos">8</span><span class="sb">```</span>
+</pre></div>
+</div>
+</div>
+<p>本書の変換プログラムは Mermaid に対応していないため、表示結果は出せない。GitHub では、このソースから次の図のような流れ図が描かれる。次の図は同じ内容を Graphviz という別のツールで描いたもので、色や形などの見た目は GitHub の表示とは異なる。</p>
+<figure class="align-center" id="id14">
+<div class="graphviz"><object data="_images/graphviz-a5f68e8b37c4b56c12cf61b6946e65e8d0889b9f.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph mermaid_like {
+    node [shape=box, style=&quot;filled&quot;, fillcolor=&quot;#ececff&quot;, color=&quot;#9370db&quot;];
+    edge [color=&quot;#333333&quot;];
+    a [label=&quot;開始&quot;];
+    b [label=&quot;入力は正しいか&quot;, shape=diamond];
+    c [label=&quot;保存する&quot;];
+    d [label=&quot;エラーを表示する&quot;];
+    e [label=&quot;終了&quot;];
+    a -&gt; b;
+    b -&gt; c [label=&quot;はい&quot;];
+    b -&gt; d [label=&quot;いいえ&quot;];
+    c -&gt; e;
+    d -&gt; e;
+}</p></object></div>
+<figcaption>
+<p><span class="caption-number">図 10.1 </span><span class="caption-text">Mermaid のソースが表す流れ図（Graphviz で描いたもの）</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>図を画像ファイルとして用意する代わりに文章で書いておけば、図を修正するときにソースを書き換えるだけで済み、変更の履歴も Git で追える。Mermaid の詳しい書き方は、Mermaid の公式サイト（付録 C）を参照すること。</p>
+</section>
+<section id="id9">
+<h3><span class="section-number">10.2.5. </span>絵文字<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">:</span></code> で英単語を挟むと、対応する絵文字に置き換えられる。たとえば <code class="docutils literal notranslate"><span class="pre">:smile:</span></code> は笑顔の絵文字に、<code class="docutils literal notranslate"><span class="pre">:+1:</span></code> は親指を立てた絵文字に、<code class="docutils literal notranslate"><span class="pre">:warning:</span></code> は警告の絵文字になる。</p>
+<div class="md-example docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>レビューありがとう :+1:
+</pre></div>
+</div>
+</div>
+<p>本書の変換プログラムはこの機能に対応していないため、表示結果は出せない。絵文字そのものを Unicode の文字として直接入力してもよい。</p>
+</section>
+</section>
+<section id="id10">
+<h2><span class="section-number">10.3. </span>サービスごとの対応状況<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>この章で説明した GitHub の独自機能は、他のサービスでも似た機能を持つことが多い。ただし、書き方が異なる場合がある。主な技術記事の投稿サービスとの違いを次の表に示す（2026 年 11 月時点）。</p>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-number">表 10.2 </span><span class="caption-text">GitHub の独自機能と他のサービスの対応</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 19.0%" />
+<col style="width: 27.0%" />
+<col style="width: 27.0%" />
+<col style="width: 27.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>機能</p></th>
+<th class="head"><p>GitHub</p></th>
+<th class="head"><p>Qiita</p></th>
+<th class="head"><p>Zenn</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>脚注</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[^1]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[^1]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[^1]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>数式</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$...$</span></code>、<code class="docutils literal notranslate"><span class="pre">$$...$$</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$...$</span></code>、<code class="docutils literal notranslate"><span class="pre">$$...$$</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$...$</span></code>、<code class="docutils literal notranslate"><span class="pre">$$...$$</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Mermaid</p></td>
+<td><p>言語名 <code class="docutils literal notranslate"><span class="pre">mermaid</span></code></p></td>
+<td><p>言語名 <code class="docutils literal notranslate"><span class="pre">mermaid</span></code></p></td>
+<td><p>言語名 <code class="docutils literal notranslate"><span class="pre">mermaid</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>アラート</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[!NOTE]</span></code> など</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:::note</span> <span class="pre">info</span></code> などの独自の書き方がある</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:::message</span></code> などの独自の書き方がある</p></td>
+</tr>
+</tbody>
+</table>
+<p>VS Code の標準のプレビューは数式には対応しているが、脚注や Mermaid などは拡張機能を追加しないと表示されない。対応状況はサービスの更新によって変わるので、使う前に各サービスのドキュメントで確かめるとよい。</p>
+</section>
+<section id="id11">
+<h2><span class="section-number">10.4. </span>よくある間違い<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-number">表 10.3 </span><span class="caption-text">HTML の埋め込みと GitHub の独自機能のよくある間違い</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>間違い</p></th>
+<th class="head"><p>結果</p></th>
+<th class="head"><p>正しい書き方</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;details&gt;</span></code> の中で空行を入れずに Markdown の記法を書く</p></td>
+<td><p>記法が解釈されない</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;summary&gt;</span></code> の後と <code class="docutils literal notranslate"><span class="pre">&lt;/details&gt;</span></code> の前に空行を入れる</p></td>
+</tr>
+<tr class="row-odd"><td><p>HTML のコメントに秘密の情報を書く</p></td>
+<td><p>ソースを開いた人に読まれる</p></td>
+<td><p>公開してよい内容だけを書く</p></td>
+</tr>
+<tr class="row-even"><td><p>金額の <code class="docutils literal notranslate"><span class="pre">$</span></code> を 2 つ含む文章を書く</p></td>
+<td><p>間の文章が数式になる</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\$</span></code> とエスケープする</p></td>
+</tr>
+<tr class="row-odd"><td><p>GitHub のアラートの書き方を他のサービスで使う</p></td>
+<td><p>普通の引用として表示されることがある</p></td>
+<td><p>そのサービスの書き方を調べる</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id12">
+<h2><span class="section-number">10.5. </span>この章のサンプル<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<p>この章の記法を使った例を示す。このファイルは <a class="reference download internal" download="" href="_downloads/82a83818f520888fdd82c2f3e22eba42/ch10_html_github.md"><code class="xref download docutils literal notranslate"><span class="pre">ch10_html_github.md</span></code></a> からダウンロードできる。</p>
+<div class="md-example md-example-math docutils container">
+<p class="md-example-label">書き方</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="gh"># 計算ツール</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">&gt; </span><span class="ge">[!NOTE]</span>
+<span class="linenos"> 4</span><span class="k">&gt; </span><span class="ge">このツールは学習用である。</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>円の面積は $S = \pi r^2$ で求める[^formula]。
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>&lt;details&gt;
+<span class="linenos"> 9</span>&lt;summary&gt;実行結果の例&lt;/summary&gt;
+<span class="linenos">10</span>
+<span class="linenos">11</span>半径 2 の場合、面積はおよそ 12.57 になる。
+<span class="linenos">12</span>
+<span class="linenos">13</span>&lt;/details&gt;
+<span class="linenos">14</span>
+<span class="linenos">15</span>&lt;img src=&quot;images/sample.png&quot; alt=&quot;サンプル画像&quot; width=&quot;120&quot;&gt;
+<span class="linenos">16</span>
+<span class="linenos">17</span>&lt;!-- TODO: 球の体積の計算を追加する --&gt;
+<span class="linenos">18</span>
+<span class="linenos">19</span>[<span class="nl">^formula</span>]: <span class="na">$\pi$ は円周率で、およそ 3.14 である。</span>
+</pre></div>
+</div>
+<p class="md-example-label">表示結果（GitHub）</p>
+<div class="md-result">
+<h1 id="計算ツール">計算ツール</h1>
+<div class="markdown-alert markdown-alert-note">
+<p class="markdown-alert-title">Note</p>
+<p>このツールは学習用である。</p>
+</div>
+<p>円の面積は <span class="math inline">\(S = \pi r^2\)</span> で求める<sup class="footnote-ref"><a href="#fn-ex7-1" id="fnref-ex7-1">[1]</a></sup>。</p>
+<details>
+<summary>実行結果の例</summary>
+<p>半径 2 の場合、面積はおよそ 12.57 になる。</p>
+</details>
+<img src="images/sample.png" alt="サンプル画像" width="120">
+<!-- TODO: 球の体積の計算を追加する -->
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn-ex7-1" class="footnote-item"><p><span class="math inline">\(\pi\)</span> は円周率で、およそ 3.14 である。 <a href="#fnref-ex7-1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ch09_table.html" class="btn btn-neutral float-left" title="9. 表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ch11_readme.html" class="btn btn-neutral float-right" title="11. 実践：README を書く" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Nunu_3060.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
